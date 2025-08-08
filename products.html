@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Unity SACCO</title>
+    <meta name="description" content="Explore Unity SACCO's comprehensive range of financial products including savings accounts, loans, and investment services.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span>U</span>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Unity SACCO</h1>
+                        <p>Your Financial Future, Together</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="#products" class="nav-link active">Products</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- CTA Buttons -->
+                <div class="header-actions">
+                    <button class="btn btn-outline">Join Us</button>
+                    <button class="btn btn-primary">Member Login</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="nav-mobile" id="mobileNav">
+                <nav>
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="#products" class="nav-link active">Products</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="mobile-actions">
+                    <button class="btn btn-outline">Join Us</button>
+                    <button class="btn btn-primary">Member Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Products Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <div class="section-badge">
+                        <i data-lucide="credit-card"></i>
+                        <span>Our Products</span>
+                    </div>
+                    <h1>Financial Products Designed for You</h1>
+                    <p>Discover our comprehensive range of savings and loan products designed to meet your unique financial needs and help you achieve your goals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="product-categories">
+            <div class="container">
+                <div class="product-tabs">
+                    <button class="tab-btn active" data-category="savings">
+                        <i data-lucide="piggy-bank"></i>
+                        Savings Products
+                    </button>
+                    <button class="tab-btn" data-category="loans">
+                        <i data-lucide="banknote"></i>
+                        Loan Products
+                    </button>
+                    <button class="tab-btn" data-category="investments">
+                        <i data-lucide="trending-up"></i>
+                        Investment Services
+                    </button>
+                </div>
+
+                <!-- Savings Products -->
+                <div class="tab-content active" id="savings">
+                    <div class="products-grid">
+                        <div class="product-card featured">
+                            <div class="product-badge">Most Popular</div>
+                            <div class="product-icon">
+                                <i data-lucide="piggy-bank"></i>
+                            </div>
+                            <h3>Regular Savings Account</h3>
+                            <p class="product-description">Start your savings journey with our flexible regular savings account offering competitive interest rates.</p>
+                            <div class="product-features">
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>4.5% annual interest rate</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Minimum balance: KSh 1,000</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Unlimited deposits</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Mobile banking access</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-icon">
+                                <i data-lucide="target"></i>
+                            </div>
+                            <h3>Goal Savings Account</h3>
+                            <p class="product-description">Save for specific goals with our targeted savings account designed to help you reach your dreams.</p>
+                            <div class="product-features">
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>5.0% annual interest rate</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Automated deposits</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Goal tracking tools</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">Learn More</button>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-icon">
+                                <i data-lucide="calendar"></i>
+                            </div>
+                            <h3>Fixed Deposit Account</h3>
+                            <p class="product-description">Earn higher returns with our fixed deposit accounts offering guaranteed interest rates.</p>
+                            <div class="product-features">
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Up to 7.5% annual interest</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Terms: 3-60 months</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Guaranteed returns</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loan Products -->
+                <div class="tab-content" id="loans">
+                    <div class="products-grid">
+                        <div class="product-card featured">
+                            <div class="product-badge">Best Value</div>
+                            <div class="product-icon">
+                                <i data-lucide="banknote"></i>
+                            </div>
+                            <h3>Personal Loan</h3>
+                            <p class="product-description">Quick and flexible personal loans for your immediate financial needs with competitive rates.</p>
+                            <div class="product-features">
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Interest rate from 12% p.a.</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Up to KSh 5 million</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Repayment: Up to 5 years</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Quick approval</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-icon">
+                                <i data-lucide="home"></i>
+                            </div>
+                            <h3>Home Loan</h3>
+                            <p class="product-description">Make your dream of homeownership a reality with our affordable home loan solutions.</p>
+                            <div class="product-features">
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Interest rate from 10% p.a.</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Up to KSh 20 million</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Repayment: Up to 25 years</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">Learn More</button>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-icon">
+                                <i data-lucide="briefcase"></i>
+                            </div>
+                            <h3>Business Loan</h3>
+                            <p class="product-description">Grow your business with our flexible business loans designed for entrepreneurs and SMEs.</p>
+                            <div class="product-features">
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Interest rate from 14% p.a.</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Up to KSh 10 million</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Flexible repayment terms</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">Learn More</button>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-icon">
+                                <i data-lucide="car"></i>
+                            </div>
+                            <h3>Auto Loan</h3>
+                            <p class="product-description">Drive your dream car today with our competitive auto loan rates and flexible terms.</p>
+                            <div class="product-features">
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Interest rate from 13% p.a.</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Up to KSh 8 million</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>New & used vehicles</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment Services -->
+                <div class="tab-content" id="investments">
+                    <div class="products-grid">
+                        <div class="product-card featured">
+                            <div class="product-badge">High Returns</div>
+                            <div class="product-icon">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <h3>Investment Portfolio</h3>
+                            <p class="product-description">Diversified investment portfolios managed by our expert team to maximize your returns.</p>
+                            <div class="product-features">
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Expected returns: 8-15% p.a.</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Professional management</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Regular reporting</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Risk assessment</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary">Start Investing</button>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-icon">
+                                <i data-lucide="shield"></i>
+                            </div>
+                            <h3>Retirement Planning</h3>
+                            <p class="product-description">Secure your future with our comprehensive retirement planning and pension services.</p>
+                            <div class="product-features">
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Tax-efficient savings</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Flexible contributions</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Expert guidance</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">Plan Retirement</button>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-icon">
+                                <i data-lucide="graduation-cap"></i>
+                            </div>
+                            <h3>Education Fund</h3>
+                            <p class="product-description">Invest in your children's education with our dedicated education savings and investment plans.</p>
+                            <div class="product-features">
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Goal-based savings</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Flexible withdrawals</span>
+                                </div>
+                                <div class="feature">
+                                    <i data-lucide="check"></i>
+                                    <span>Growth-focused strategy</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">Start Saving</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loan Calculator Section -->
+        <section class="loan-calculator">
+            <div class="container">
+                <div class="calculator-content">
+                    <div class="calculator-info">
+                        <h2>Loan Calculator</h2>
+                        <p>Use our loan calculator to estimate your monthly payments and plan your finances effectively.</p>
+                        
+                        <div class="calculator-features">
+                            <div class="feature">
+                                <i data-lucide="calculator"></i>
+                                <span>Instant calculations</span>
+                            </div>
+                            <div class="feature">
+                                <i data-lucide="pie-chart"></i>
+                                <span>Payment breakdown</span>
+                            </div>
+                            <div class="feature">
+                                <i data-lucide="calendar"></i>
+                                <span>Amortization schedule</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount (KSh)</label>
+                            <input type="number" id="loanAmount" value="1000000" min="10000" max="50000000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interestRate">Interest Rate (%)</label>
+                            <input type="number" id="interestRate" value="12" min="1" max="30" step="0.1">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loanTerm">Loan Term (Years)</label>
+                            <input type="number" id="loanTerm" value="5" min="1" max="25">
+                        </div>
+                        
+                        <button class="btn btn-primary" id="calculateBtn">Calculate Payment</button>
+                        
+                        <div class="calculation-result" id="calculationResult">
+                            <div class="result-item">
+                                <span class="result-label">Monthly Payment:</span>
+                                <span class="result-value" id="monthlyPayment">KSh 0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Total Interest:</span>
+                                <span class="result-value" id="totalInterest">KSh 0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Total Amount:</span>
+                                <span class="result-value" id="totalAmount">KSh 0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Choose the financial product that's right for you and take the first step towards achieving your financial goals.</p>
+                    <div class="cta-actions">
+                        <button class="btn btn-accent btn-lg">
+                            Apply Online
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                        <button class="btn btn-outline btn-lg">Schedule Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <span>U</span>
+                        </div>
+                        <div>
+                            <h3>Unity SACCO</h3>
+                            <p>Your Financial Future, Together</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Unity SACCO is a member-owned financial cooperative committed to providing
+                        excellent financial services and building stronger communities.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Savings Accounts</a></li>
+                        <li><a href="index.html#services">Personal Loans</a></li>
+                        <li><a href="index.html#services">Home Loans</a></li>
+                        <li><a href="index.html#services">Business Loans</a></li>
+                        <li><a href="index.html#services">Investment Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <span>123 Financial District, Nairobi, Kenya</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <span>+254 700 123 456</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <span>info@unitysacco.co.ke</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="clock"></i>
+                            <span>Mon-Fri: 8AM-5PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Unity SACCO. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
