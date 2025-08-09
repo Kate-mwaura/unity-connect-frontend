@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity SACCO - Member Dashboard</title>
+    <meta name="description" content="Unity SACCO member dashboard - manage your savings groups, view transactions, and track your financial progress.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/notifications.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-title">Unity SACCO</h1>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#groups" class="nav-item" data-page="groups">
+                    <i data-lucide="users"></i>
+                    <span>Groups</span>
+                </a>
+                <a href="#wallet" class="nav-item" data-page="wallet">
+                    <i data-lucide="wallet"></i>
+                    <span>Wallet</span>
+                </a>
+                <a href="#activity" class="nav-item" data-page="activity">
+                    <i data-lucide="activity"></i>
+                    <span>Activity</span>
+                </a>
+                <a href="#settings" class="nav-item" data-page="settings">
+                    <i data-lucide="settings"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="handleLogout()">
+                    <i data-lucide="log-out"></i>
+                    <span>Logout</span>
+                </button>
+                <p class="secured-text">Secured by Unity SACCO</p>
+            </div>
+        </aside>
+        
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+            <!-- Dashboard Page -->
+            <div id="dashboard-page" class="page-content active">
+                <header class="page-header">
+                    <h1 class="welcome-title">Welcome, Andrew Osindo!</h1>
+                    <p class="welcome-subtitle">Here's what's happening with your savings groups today.</p>
+                </header>
+                
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-label">Total Groups</h3>
+                            <p class="stat-value" id="totalGroups">1</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i data-lucide="wallet"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-label">Wallet Balance</h3>
+                            <p class="stat-value" id="walletBalance">KSh 150,000.00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i data-lucide="trending-up"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-label">Total Savings</h3>
+                            <p class="stat-value" id="totalSavings">KSh 45,500.00</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <!-- My Groups Section -->
+                    <section class="dashboard-section">
+                        <div class="section-header">
+                            <h2>My Groups</h2>
+                            <button class="btn btn-primary" onclick="showCreateGroupModal()">
+                                <i data-lucide="plus"></i>
+                                Create Group
+                            </button>
+                        </div>
+                        
+                        <div class="groups-list" id="groupsList">
+                            <div class="group-card">
+                                <div class="group-info">
+                                    <h4>Andrew Osindo</h4>
+                                    <p>Hello</p>
+                                </div>
+                                <div class="group-actions">
+                                    <button class="btn btn-outline btn-sm">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Recent Activity Section -->
+                    <section class="dashboard-section">
+                        <div class="section-header">
+                            <h2>Recent Activity</h2>
+                        </div>
+                        
+                        <div class="activity-list" id="activityList">
+                            <div class="activity-item">
+                                <div class="activity-icon green">
+                                    <i data-lucide="arrow-up-right"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Contributed to Alpha Chama</h4>
+                                    <p>2 hours ago • Alpha Chama</p>
+                                </div>
+                                <div class="activity-amount positive">+KSh 5,000</div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon red">
+                                    <i data-lucide="arrow-down-left"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Withdrew from Beta Group</h4>
+                                    <p>1 day ago • Beta Group</p>
+                                </div>
+                                <div class="activity-amount negative">-KSh 2,500</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- Quick Actions -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Quick Actions</h2>
+                    </div>
+                    
+                    <div class="quick-actions-grid">
+                        <button class="quick-action-card" onclick="showCreateGroupModal()">
+                            <i data-lucide="plus"></i>
+                            <span>Create Group</span>
+                        </button>
+                        
+                        <button class="quick-action-card" onclick="showPage('groups')">
+                            <i data-lucide="search"></i>
+                            <span>Browse Groups</span>
+                        </button>
+                        
+                        <button class="quick-action-card" onclick="showPage('wallet')">
+                            <i data-lucide="credit-card"></i>
+                            <span>Manage Wallet</span>
+                        </button>
+                        
+                        <button class="quick-action-card" onclick="showPage('activity')">
+                            <i data-lucide="bar-chart-3"></i>
+                            <span>View Transactions</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Groups Page -->
+            <div id="groups-page" class="page-content">
+                <header class="page-header">
+                    <h1>Savings Groups</h1>
+                    <p>Manage your savings groups and discover new opportunities.</p>
+                </header>
+                
+                <div class="groups-content">
+                    <div class="groups-filters">
+                        <button class="filter-btn active">All Groups</button>
+                        <button class="filter-btn">My Groups</button>
+                        <button class="filter-btn">Available</button>
+                    </div>
+                    
+                    <div class="groups-grid" id="allGroupsGrid">
+                        <!-- Groups will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wallet Page -->
+            <div id="wallet-page" class="page-content">
+                <header class="page-header">
+                    <h1>Wallet Management</h1>
+                    <p>View your balance, transactions, and manage your funds.</p>
+                </header>
+                
+                <div class="wallet-content">
+                    <div class="balance-card">
+                        <h3>Current Balance</h3>
+                        <p class="balance-amount" id="currentBalance">KSh 150,000.00</p>
+                        <div class="balance-actions">
+                            <button class="btn btn-primary">Deposit</button>
+                            <button class="btn btn-outline">Withdraw</button>
+                        </div>
+                    </div>
+                    
+                    <div class="transaction-history">
+                        <h3>Transaction History</h3>
+                        <div class="transaction-list" id="transactionList">
+                            <!-- Transactions will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity Page -->
+            <div id="activity-page" class="page-content">
+                <header class="page-header">
+                    <h1>Activity Overview</h1>
+                    <p>Track your financial activities and group participation.</p>
+                </header>
+                
+                <div class="activity-content">
+                    <div class="activity-stats">
+                        <div class="activity-stat">
+                            <h4>This Month</h4>
+                            <p>KSh 15,000</p>
+                        </div>
+                        <div class="activity-stat">
+                            <h4>Total Contributions</h4>
+                            <p>KSh 125,000</p>
+                        </div>
+                        <div class="activity-stat">
+                            <h4>Groups Joined</h4>
+                            <p>3</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detailed-activity" id="detailedActivity">
+                        <!-- Detailed activity will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Settings Page -->
+            <div id="settings-page" class="page-content">
+                <header class="page-header">
+                    <h1>Account Settings</h1>
+                    <p>Manage your account preferences and security settings.</p>
+                </header>
+                
+                <div class="settings-content">
+                    <div class="settings-section">
+                        <h3>Profile Information</h3>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" value="Andrew Osindo">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" value="andrew@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" value="+254 700 123 456">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Profile</button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h3>Security</h3>
+                        <button class="btn btn-outline">Change Password</button>
+                        <button class="btn btn-outline">Enable 2FA</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Create Group Modal -->
+    <div id="createGroupModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Create New Savings Group</h3>
+                <button class="modal-close" onclick="hideCreateGroupModal()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <form class="modal-form" id="createGroupForm">
+                <div class="form-group">
+                    <label for="groupName">Group Name</label>
+                    <input type="text" id="groupName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="groupDescription">Description</label>
+                    <textarea id="groupDescription" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contributionAmount">Monthly Contribution (KSh)</label>
+                    <input type="number" id="contributionAmount" min="1000" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="maxMembers">Maximum Members</label>
+                    <input type="number" id="maxMembers" min="3" max="50" required>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" onclick="hideCreateGroupModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Group</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/dashboard.js"></script>
+    
+    <!-- Initialize Icons -->
+    <script>
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
