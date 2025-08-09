@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla JS Accordion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background-color: #f9fafb;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .accordion {
+            width: 100%;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-trigger {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #111827;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .accordion-trigger:hover {
+            background-color: #f9fafb;
+        }
+
+        .accordion-trigger:focus {
+            outline: none;
+            background-color: #f3f4f6;
+        }
+
+        .accordion-trigger[aria-expanded="true"] {
+            background-color: #f9fafb;
+        }
+
+        .accordion-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .accordion-trigger[aria-expanded="true"] .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            overflow: hidden;
+            transition: all 0.2s ease-out;
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .accordion-content.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .accordion-content-inner {
+            padding: 0 1.5rem 1rem 1.5rem;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #111827;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Chevron icon SVG */
+        .chevron-down {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Frequently Asked Questions</h1>
+        
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false" data-target="content-1">
+                    What are the benefits of joining Unity SACCO?
+                    <svg class="accordion-icon chevron-down" viewBox="0 0 24 24">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                </button>
+                <div class="accordion-content" id="content-1">
+                    <div class="accordion-content-inner">
+                        Unity SACCO offers competitive interest rates on savings, low-cost loans, financial education programs, and a strong community of members working together towards financial prosperity. As a member-owned cooperative, your voice matters in our decision-making process.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false" data-target="content-2">
+                    How do I apply for a loan?
+                    <svg class="accordion-icon chevron-down" viewBox="0 0 24 24">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                </button>
+                <div class="accordion-content" id="content-2">
+                    <div class="accordion-content-inner">
+                        You can apply for a loan by visiting any of our branches, calling our customer service line, or using our online member portal. You'll need to provide identification, proof of income, and meet our membership requirements. Our loan officers will guide you through the entire process.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false" data-target="content-3">
+                    What documents do I need to become a member?
+                    <svg class="accordion-icon chevron-down" viewBox="0 0 24 24">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                </button>
+                <div class="accordion-content" id="content-3">
+                    <div class="accordion-content-inner">
+                        To become a member, you'll need a valid ID (passport or national ID), proof of residence, passport-sized photos, and an initial deposit. Additional requirements may apply depending on your employment status and the type of membership you're seeking.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false" data-target="content-4">
+                    Are my savings insured and secure?
+                    <svg class="accordion-icon chevron-down" viewBox="0 0 24 24">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                </button>
+                <div class="accordion-content" id="content-4">
+                    <div class="accordion-content-inner">
+                        Yes, your savings are protected by the Kenya Deposit Insurance Corporation (KDIC) up to the maximum limit. We also employ advanced security measures including encryption, secure data centers, and regular security audits to protect your financial information.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false" data-target="content-5">
+                    What are your operating hours?
+                    <svg class="accordion-icon chevron-down" viewBox="0 0 24 24">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                </button>
+                <div class="accordion-content" id="content-5">
+                    <div class="accordion-content-inner">
+                        Our branches are open Monday to Friday from 8:00 AM to 5:00 PM, and Saturdays from 9:00 AM to 1:00 PM. Our online services and mobile app are available 24/7. Customer service is available during business hours and through our online chat system.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+            
+            accordionTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    // Close all other accordion items
+                    accordionTriggers.forEach(otherTrigger => {
+                        if (otherTrigger !== this) {
+                            const otherTargetId = otherTrigger.getAttribute('data-target');
+                            const otherContent = document.getElementById(otherTargetId);
+                            
+                            otherTrigger.setAttribute('aria-expanded', 'false');
+                            otherContent.classList.remove('open');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isExpanded) {
+                        this.setAttribute('aria-expanded', 'false');
+                        content.classList.remove('open');
+                    } else {
+                        this.setAttribute('aria-expanded', 'true');
+                        content.classList.add('open');
+                    }
+                });
+            });
+            
+            // Keyboard accessibility
+            accordionTriggers.forEach(trigger => {
+                trigger.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
